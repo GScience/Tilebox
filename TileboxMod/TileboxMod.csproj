@@ -92,10 +92,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>mkdir "$(SolutionDir)Output\$(Platform)\$(Configuration)\mods"
-copy /y "$(TargetPath)" "$(SolutionDir)Output\$(Platform)\$(Configuration)\mods\$(TargetFileName)"</PostBuildEvent>
+    <PostBuildEvent>copy /y "$(TargetPath)" "$(SolutionDir)Output\$(Platform)\$(Configuration)\mods\$(TargetFileName)"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>del "$(SolutionDir)Output\$(Platform)\$(Configuration)\mods\$(TargetFileName)"</PreBuildEvent>
+    <PreBuildEvent>mkdir "$(SolutionDir)Output\$(Platform)\$(Configuration)\mods"
+del "$(SolutionDir)Output\$(Platform)\$(Configuration)\mods\$(TargetFileName)"</PreBuildEvent>
   </PropertyGroup>
 </Project>
